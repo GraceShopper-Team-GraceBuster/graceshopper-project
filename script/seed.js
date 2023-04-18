@@ -2,12 +2,11 @@
 
 const {
   db,
-  models: { User },
+  models: { User, Movies },
 } = require("../server/db");
 
 const movies = [
   {
-    id: 1,
     Title: "The Lion King",
     Genre: "Animation, Adventure, Drama",
     Director: "Roger Allers, Rob Minkoff",
@@ -20,7 +19,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 2,
     Title: "Aladdin",
     Genre: "Animation, Adventure, Comedy",
     Director: "Ron Clements, John Musker",
@@ -32,7 +30,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 3,
     Title: "Snow White and the Seven Dwarfs",
     Genre: "Animation, Adventure, Family",
     Director:
@@ -46,7 +43,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 4,
     Title: "Titanic",
     Genre: "Drama, Romance",
     Director: "James Cameron",
@@ -58,7 +54,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 5,
     Title: "Jurassic Park",
     Genre: "Action, Adventure, Sci-Fi",
     Director: "Steven Spielberg",
@@ -70,7 +65,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 6,
     Title: "Independence Day",
     Genre: "Action, Adventure, Sci-Fi",
     Director: "Roland Emmerich",
@@ -82,7 +76,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 7,
     Title: "The Shawshank Redemption",
     Genre: "Drama",
     Director: "Frank Darabont",
@@ -94,7 +87,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 8,
     Title: "The Godfather",
     Genre: "Crime, Drama",
     Director: "Francis Ford Coppola",
@@ -107,7 +99,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 9,
     Title: "The Dark Knight",
     Genre: "Action, Crime, Drama",
     Director: "Christopher Nolan",
@@ -119,7 +110,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 10,
     Title: "12 Angry Men",
     Genre: "Drama",
     Director: "Sidney Lumet",
@@ -131,7 +121,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 11,
     Title: "Schindler's List",
     Genre: "Biography, Drama, History",
     Director: "Steven Spielberg",
@@ -143,7 +132,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 12,
     Title: "The Lord of the Rings: The Return of the King",
     Genre: "Action, Adventure, Drama",
     Director: "Peter Jackson",
@@ -155,7 +143,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 13,
     Title: "Pulp Fiction",
     Genre: "Crime, Drama",
     Director: "Quentin Tarantino",
@@ -167,7 +154,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 14,
     Title: "The Lord of the Rings: The Fellowship of the Ring",
     Genre: "Action, Adventure, Drama",
     Director: "Peter Jackson",
@@ -179,7 +165,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 15,
     Title: "The Good, the Bad and the Ugly",
     Genre: "Western",
     Director: "Sergio Leone",
@@ -191,7 +176,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 16,
     Title: "Forrest Gump",
     Genre: "Drama, Romance",
     Director: "Robert Zemeckis",
@@ -203,7 +187,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 17,
     Title: "Inception",
     Genre: "Action, Adventure, Sci-Fi",
     Director: "Christopher Nolan",
@@ -215,7 +198,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 18,
     Title: "The Lord of the Rings: The Two Towers",
     Genre: "Action, Adventure, Drama",
     Director: "Peter Jackson",
@@ -227,7 +209,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 19,
     Title: "The Matrix",
     Genre: "Action, Sci-Fi",
     Director: "Lana Wachowski, Lilly Wachowski",
@@ -239,7 +220,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 20,
     Title: "Goodfellas",
     Genre: "Crime, Drama",
     Director: "Martin Scorsese",
@@ -251,7 +231,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 21,
     Title: "Star Wars: Episode V - The Empire Strikes Back",
     Genre: "Action, Adventure, Fantasy",
     Director: "Irvin Kershner",
@@ -263,7 +242,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 22,
     Title: "One Flew Over the Cuckoo's Nest",
     Genre: "Drama",
     Director: "Milos Forman",
@@ -275,7 +253,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 23,
     Title: "The Silence of the Lambs",
     Genre: "Crime, Drama, Thriller",
     Director: "Jonathan Demme",
@@ -287,7 +264,6 @@ const movies = [
       "https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400",
   },
   {
-    id: 24,
     Title: "Se7en",
     Genre: "Crime, Drama, Mystery",
     Director: "David Fincher",
@@ -322,13 +298,21 @@ async function seed() {
     }),
   ]);
 
+  const createdMovies = await Promise.all(
+    movies.map((movie) => {
+      return Movies.create(movie);
+    })
+  );
+
   console.log(`seeded ${users.length} users`);
+  console.log(`seeded ${createdMovies.length} movies`);
   console.log(`seeded successfully`);
   return {
     users: {
       cody: users[0],
       murphy: users[1],
     },
+    movies: createdMovies,
   };
 }
 
