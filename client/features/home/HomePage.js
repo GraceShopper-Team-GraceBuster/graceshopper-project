@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 // homepage component
 
-const HomePage = () => {
+const Home = () => {
     return (
         <>
             <div>
@@ -16,4 +16,4 @@ const HomePage = () => {
     )
 };
 
-export default HomePage;
+export default Home;
