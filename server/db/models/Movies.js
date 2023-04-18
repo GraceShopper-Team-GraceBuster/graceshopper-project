@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize')
-const db = require('../db')
+const Sequelize = require("sequelize");
+const db = require("../db");
 
 const Movies = db.define('Movies', {
     id: {
@@ -57,7 +57,7 @@ const Movies = db.define('Movies', {
     },
 
     Price: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.DECIMAL,
         allowNull: false,
         validate: {
             notEmpty: true,
@@ -66,12 +66,9 @@ const Movies = db.define('Movies', {
     },
 
     ImageUrl: {
-        imageUrl: {
-            type: Sequelize.STRING,
-            defaultValue:
-                'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
-        },
+        type: Sequelize.STRING,
+        defaultValue: 'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
-})
+});
 
-module.exports = Movies
+module.exports = Movies;
