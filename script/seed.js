@@ -7,6 +7,7 @@ const {
 
 const movies = [
     {
+        id: 1,
         Title: 'The Lion King',
         Genre: 'Animation, Adventure, Drama',
         Director: 'Roger Allers, Rob Minkoff',
@@ -15,8 +16,11 @@ const movies = [
         Description:
             'Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 2,
         Title: 'Aladdin',
         Genre: 'Animation, Adventure, Comedy',
         Director: 'Ron Clements, John Musker',
@@ -25,8 +29,11 @@ const movies = [
         Description:
             'A kindhearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 3,
         Title: 'Snow White and the Seven Dwarfs',
         Genre: 'Animation, Adventure, Family',
         Director:
@@ -36,8 +43,11 @@ const movies = [
         Description:
             'Exiled into the dangerous forest by her wicked stepmother, a princess is rescued by seven dwarf miners who make her part of their household.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 4,
         Title: 'Titanic',
         Genre: 'Drama, Romance',
         Director: 'James Cameron',
@@ -45,8 +55,11 @@ const movies = [
         Description:
             'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 5,
         Title: 'Jurassic Park',
         Genre: 'Action, Adventure, Sci-Fi',
         Director: 'Steven Spielberg',
@@ -54,8 +67,11 @@ const movies = [
         Description:
             "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.",
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 6,
         Title: 'Independence Day',
         Genre: 'Action, Adventure, Sci-Fi',
         Director: 'Roland Emmerich',
@@ -63,8 +79,11 @@ const movies = [
         Description:
             "The aliens are coming and their goal is to invade and destroy Earth. Fighting superior technology, mankind's best weapon is the will to survive.",
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 7,
         Title: 'The Shawshank Redemption',
         Genre: 'Drama',
         Director: 'Frank Darabont',
@@ -72,8 +91,11 @@ const movies = [
         Description:
             'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 8,
         Title: 'The Godfather',
         Genre: 'Crime, Drama',
         Director: 'Francis Ford Coppola',
@@ -82,8 +104,11 @@ const movies = [
             'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
 
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 9,
         Title: 'The Dark Knight',
         Genre: 'Action, Crime, Drama',
         Director: 'Christopher Nolan',
@@ -91,8 +116,11 @@ const movies = [
         Description:
             'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 10,
         Title: '12 Angry Men',
         Genre: 'Drama',
         Director: 'Sidney Lumet',
@@ -100,8 +128,11 @@ const movies = [
         Description:
             'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 11,
         Title: "Schindler's List",
         Genre: 'Biography, Drama, History',
         Director: 'Steven Spielberg',
@@ -109,8 +140,11 @@ const movies = [
         Description:
             'In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 12,
         Title: 'The Lord of the Rings: The Return of the King',
         Genre: 'Action, Adventure, Drama',
         Director: 'Peter Jackson',
@@ -118,8 +152,11 @@ const movies = [
         Description:
             "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 13,
         Title: 'Pulp Fiction',
         Genre: 'Crime, Drama',
         Director: 'Quentin Tarantino',
@@ -127,8 +164,11 @@ const movies = [
         Description:
             'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 14,
         Title: 'The Lord of the Rings: The Fellowship of the Ring',
         Genre: 'Action, Adventure, Drama',
         Director: 'Peter Jackson',
@@ -136,8 +176,11 @@ const movies = [
         Description:
             'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 15,
         Title: 'The Good, the Bad and the Ugly',
         Genre: 'Western',
         Director: 'Sergio Leone',
@@ -145,8 +188,11 @@ const movies = [
         Description:
             'A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 16,
         Title: 'Forrest Gump',
         Genre: 'Drama, Romance',
         Director: 'Robert Zemeckis',
@@ -154,16 +200,23 @@ const movies = [
         Description:
             'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 17,
         Title: 'Inception',
         Genre: 'Action, Adventure, Sci-Fi',
         Director: 'Christopher Nolan',
         LeadActor: 'Leonardo DiCaprio',
         Description:
             'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
+        Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 18,
         Title: 'The Lord of the Rings: The Two Towers',
         Genre: 'Action, Adventure, Drama',
         Director: 'Peter Jackson',
@@ -171,8 +224,11 @@ const movies = [
         Description:
             "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 19,
         Title: 'The Matrix',
         Genre: 'Action, Sci-Fi',
         Director: 'Lana Wachowski, Lilly Wachowski',
@@ -180,8 +236,11 @@ const movies = [
         Description:
             'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 20,
         Title: 'Goodfellas',
         Genre: 'Crime, Drama',
         Director: 'Martin Scorsese',
@@ -189,8 +248,11 @@ const movies = [
         Description:
             'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 21,
         Title: 'Star Wars: Episode V - The Empire Strikes Back',
         Genre: 'Action, Adventure, Fantasy',
         Director: 'Irvin Kershner',
@@ -198,8 +260,11 @@ const movies = [
         Description:
             'After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 22,
         Title: "One Flew Over the Cuckoo's Nest",
         Genre: 'Drama',
         Director: 'Milos Forman',
@@ -207,8 +272,11 @@ const movies = [
         Description:
             'A criminal pleads insanity and is admitted to a mental institution, where he rebels against the oppressive nurse and rallies up the scared patients.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 23,
         Title: 'The Silence of the Lambs',
         Genre: 'Crime, Drama, Thriller',
         Director: 'Jonathan Demme',
@@ -216,8 +284,11 @@ const movies = [
         Description:
             'A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
     {
+        id: 24,
         Title: 'Se7en',
         Genre: 'Crime, Drama, Mystery',
         Director: 'David Fincher',
@@ -225,6 +296,8 @@ const movies = [
         Description:
             'Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.',
         Price: 20,
+        ImageUrl:
+            'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
     },
 ]
 
