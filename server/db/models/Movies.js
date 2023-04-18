@@ -2,6 +2,15 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Movies = db.define('Movies', {
+    id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+            notNull: true,
+        },
+    },
+
     Title: {
         type: Sequelize.TEXT,
         allowNull: false,
@@ -19,7 +28,7 @@ const Movies = db.define('Movies', {
             notNull: true,
         },
     },
-    
+
     Director: {
         type: Sequelize.TEXT,
         allowNull: false,
@@ -37,7 +46,7 @@ const Movies = db.define('Movies', {
             notNull: true,
         },
     },
-    
+
     Description: {
         type: Sequelize.TEXT,
         allowNull: false,
@@ -53,6 +62,14 @@ const Movies = db.define('Movies', {
         validate: {
             notEmpty: true,
             notNull: true,
+        },
+    },
+
+    ImageUrl: {
+        imageUrl: {
+            type: Sequelize.STRING,
+            defaultValue:
+                'https://thechive.com/wp-content/uploads/2019/12/person-hilariously-photoshops-animals-onto-random-things-xx-photos-25.jpg?attachment_cache_bust=3136487&quality=85&strip=info&w=400',
         },
     },
 })
