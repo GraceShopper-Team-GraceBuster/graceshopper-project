@@ -61,3 +61,13 @@ form div {
 #homepage-title {
   text-align: center;
 }
+
+#footer-ctr{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#copyright{
+  padding: 5px;
+}

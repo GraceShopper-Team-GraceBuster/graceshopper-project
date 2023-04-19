@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from "../footer/Footer";
 
 const Shop = () => {
     return (
@@ -11,13 +12,7 @@ const Shop = () => {
                 </div>
                 {/* do we want a search bar here or filter? */}
                 <div id='movie-list'>
-                    {/* importing movies into a list? */}
-                    <ul>
-                        <li><Movies/></li>
-                        <li><Movies/></li>
-                        <li><Movies/></li>
-                        <li><Movies/></li>
-                    </ul>
+                    {/* importing movies here from a new component */}
                 </div>
             </div>
             <footer>
