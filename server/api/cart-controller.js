@@ -1,4 +1,4 @@
-import { ShoppingCart } from './cart.js';
+import { ShoppingCart } from '../../public/cart.js';
 
 const cart = new ShoppingCart();
 
@@ -18,3 +18,7 @@ function updateCartQuantity(itemId, quantity) {
 }
 
 // add other functions as needed
+// ...
+
+export { addToCart, removeFromCart, updateCartQuantity };
+

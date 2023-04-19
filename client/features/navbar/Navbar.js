@@ -21,6 +21,15 @@ const Navbar = () => {
             <button type="button" onClick={logoutAndRedirectHome}>
               Logout
             </button>
+            <div id="cart-container">
+              <a href="#" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+              <div id="cart-dropdown">
+                <ul id="cart-list"></ul>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+                <button id="empty-cart">Empty Cart</button>
+                <button id="checkout">Checkout</button>
+              </div>
+            </div>
           </div>
         ) : (
           <div>
@@ -28,6 +37,15 @@ const Navbar = () => {
             <Link to="/about">About</Link>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
+            <div id="cart-container">
+              <a href="#" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+              <div id="cart-dropdown">
+                <ul id="cart-list"></ul>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+                <button id="empty-cart">Empty Cart</button>
+                <button id="checkout">Checkout</button>
+              </div>
+            </div>
           </div>
         )}
       </nav>
