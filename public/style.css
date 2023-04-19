@@ -57,3 +57,7 @@ form div {
 .movies h3 {
   margin: 2px;
 }
+
+#homepage-title {
+  text-align: center;
+}

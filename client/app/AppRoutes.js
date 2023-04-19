@@ -5,6 +5,7 @@ import AuthForm from "../features/auth/AuthForm";
 import { me } from "./store";
 import Account from "../features/account/Account";
 import Movies from "../features/movies/Movies";
+import Home from "../features/home/Home";
 
 /**
  * COMPONENT
@@ -31,7 +32,7 @@ const AppRoutes = () => {
         </Routes>
       ) : (
         <Routes>
-          <Route path="/home" element={<Movies />}></Route>
+          <Route path="/home" element={<Home />}></Route>
           <Route
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}
