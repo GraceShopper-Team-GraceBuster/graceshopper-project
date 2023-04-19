@@ -1,5 +1,6 @@
 import express from 'express';
-import { ShoppingCart } from './cart.js';
+import path from 'path';
+import { ShoppingCart } from '../public/cart.js';
 
 const router = express.Router();
 const cart = new ShoppingCart();
@@ -25,4 +26,10 @@ router.post('/update-cart-quantity', (req, res) => {
 
 // other routes and handlers as needed 
 
+// Serve the index.html file
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+});
+
 export default router;
+
