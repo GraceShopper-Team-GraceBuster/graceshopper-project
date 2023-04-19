@@ -6,6 +6,8 @@ import { me } from "./store";
 import Account from "../features/account/Account";
 import Movies from "../features/movies/Movies";
 import Home from "../features/home/Home";
+import Contact from "../features/contact/Contact";
+import Shop from "../features/shop/Shop";
 
 /**
  * COMPONENT
@@ -33,6 +35,8 @@ const AppRoutes = () => {
       ) : (
         <Routes>
           <Route path="/home" element={<Home />}></Route>
+          <Route path='/contact' element={<Contact/>}></Route>
+          <Route to="/shop" element={<Shop/>}/>
           <Route
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}
