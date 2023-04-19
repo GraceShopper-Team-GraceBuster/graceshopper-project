@@ -14,6 +14,8 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+
+
 module.exports = router
 
 // explicitly select only the id and username fields - even though

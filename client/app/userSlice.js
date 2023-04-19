@@ -1,4 +1,4 @@
-import { creatSlice, createAsyncThunk } from 'react-redux'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const fetchUsers = createAsyncThunk('users/fetch', async () => {
@@ -6,7 +6,7 @@ export const fetchUsers = createAsyncThunk('users/fetch', async () => {
     return data
 })
 
-const userSlice = creatSlice({
+const userSlice = createSlice({
     name: 'users',
     initialState: [],
     extraReducers: (builder) => {
