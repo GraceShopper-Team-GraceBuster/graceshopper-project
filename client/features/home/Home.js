@@ -18,7 +18,7 @@ const Home = () => {
             <Featured movieIds={[1, 2, 3]} />
         </div>
         <div id='homepage-about'>
-            <h2>About GraceBuster</h2>
+            <h2 className="about-title">About GraceBuster</h2>
             <p className="homepage-paragraphs">GraceBuster, founded in the wake of the Blockbuster era, is a company dedicated to the preservation and promotion of vintage style movies. 
                 Our journey began as a modest venture, fueled by our passion for classic cinema and a desire to keep the spirit of the golden age of film alive. 
                 We saw an opportunity to fill the void left by the downfall of the once-mighty Blockbuster, and with determination and perseverance, we set out to become the new bastion for movie enthusiasts who appreciate the art and charm of vintage films.
@@ -29,7 +29,7 @@ const Home = () => {
             </p>
         </div>
         <div id="homepage-shop">
-            <Link to='/shop'><h2>Visit Our Shop!</h2></Link>
+            <Link to='/shop' className="home-shop"><h2>Visit Our Shop!</h2></Link>
             <Featured movieIds={[4,5,6,7,8,9]}/>
         </div>
       </div>
