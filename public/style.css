@@ -1,47 +1,57 @@
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 label {
-    display: block;
+  display: block;
 }
 
 nav a {
-    margin: 1em;
+  margin: 1em;
 }
 
 form div {
-    margin: 1em;
-    display: inline-block;
+  margin: 1em;
+  display: inline-block;
 }
 
 .title {
-    font-family: 'ITC Machine';
-    font-size: 80px;
+  font-family: "ITC Machine";
+  font-size: 80px;
+  text-align: center;
 }
 
 @font-face {
-    font-family: 'ITC Machine';
-    src: url('MachineStd.otf') format('opentype');
+  font-family: "ITC Machine";
+  src: url("MachineStd.otf") format("opentype");
 }
 
 .movie-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .movies {
-    width: 33%;
-    margin-bottom: 20px;
+  width: 470px;
+  margin: 8px 8px 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-@media screen and (max-width: 750px) {
-    .movies {
-        width: 50%;
-    }
+.movies h2 {
+  padding-top: 20px;
+  margin: 2px;
+}
+
+.movies h3 {
+  margin: 2px;
 }
