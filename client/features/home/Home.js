@@ -33,7 +33,7 @@ const Home = () => {
             <Featured movieIds={[4,5,6,7,8,9]}/>
         </div>
       </div>
-      <footer>
+      <footer id="homepage-footer">
         <Footer />
       </footer>
     </>
