@@ -17,8 +17,6 @@ const Navbar = () => {
       <nav>
         {isLoggedIn ? (
           <div>
-            <h1 className="title">GraceBuster</h1>
-            {/* The navbar will show these links after you log in */}
             <Link to="/account">Account</Link>
             <button type="button" onClick={logoutAndRedirectHome}>
               Logout
@@ -26,8 +24,6 @@ const Navbar = () => {
           </div>
         ) : (
           <div>
-            <h1 className="title">GraceBuster</h1>
-            {/* The navbar will show these links before you log in */}
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
           </div>
