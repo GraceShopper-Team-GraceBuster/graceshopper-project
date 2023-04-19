@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav>
+      <nav id="navbar">
         {isLoggedIn ? (
           <div>
             <Link to="/account">Account</Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
             <Link to="/shop">Shop</Link>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
-            <div id="cart-container">
+            {/* <div id="cart-container">
               <a href="#" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
               <div id="cart-dropdown">
                 <ul id="cart-list"></ul>
@@ -45,7 +45,7 @@ const Navbar = () => {
                 <button id="empty-cart">Empty Cart</button>
                 <button id="checkout">Checkout</button>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
       </nav>
