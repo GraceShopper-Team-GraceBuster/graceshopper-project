@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { fetchSingleMovie } from '../app/singleMovieSlice'
+import { fetchSingleMovie } from '../../app/singleMovieSlice'
 
 function SingleMovie() {
     const { id } = useParams()
