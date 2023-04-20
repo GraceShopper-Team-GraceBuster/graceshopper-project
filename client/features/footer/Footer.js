@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
-            <div>
-                <p id='copyright'>© 2023 GraceBuster</p>
-                {/* turn the below contact-p into a link when contact page is live */}
-                <p id='copyright'>Contact</p>
+            <div id='footer-ctr'>
+                <p id='copyright'>© 2023 GraceBuster |</p>
+                <Link to='/contact'>Contact</Link>
             </div>
         </>
     )

@@ -1,56 +1,43 @@
 import React from "react";
-import { useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import Movies from '../../../server/db/models/Movies';
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import Featured from "./Featured";
+import Footer from "../footer/Footer";
 
 // homepage component
 
 const Home = () => {
-    return (
-        <>
-            <div>
-                <div id="homepage-title">
-                    <h1>Welcome to GraceBuster!</h1>
-                    <h3>Browse our selection of new and classic movies!</h3>
-                </div>
-                <div>
-                    {/* feature film section, about us, new releases, best of */}
-                    <div id="featured-titles">
-                        <h2>Our Featured Titles</h2>
-                        <div className="featured-movie">
-                            <h2>Titanic</h2>
-                            <img id="featured-movie-image"/>
-                        </div>
-                        <div className="featured-movie">
-                            <h2>Independence Day</h2>
-                            <img id="featured-movie-image"/>
-                        </div>
-                        <div className="featured-movie">
-                            <h2>The Godfather</h2>
-                            <img id="featured-movie-image"/>
-                        </div>
-                        <div className="featured-movie">
-                            <h2>The Dark Knight</h2>
-                            <img id="featured-movie-image"/>
-                        </div>
-                    </div>
-                    <div id="new-releases">
-
-                    </div>
-                    <div id="best-of">
-
-                    </div>
-                </div>
-                <div>
-                    {/* shop section with a few highlighted titles */}
-                </div>
-            </div>
-            <footer>
-                {/* add footer here */}
-                <Footer/>
-            </footer>
-        </>
-    )
+  return (
+    <>
+      <div>
+        <div id="homepage-title">
+            <h1>Welcome to GraceBuster!</h1>
+            <h3>Browse our selection of new and classic movies!</h3>
+        </div>
+        <div id="featured-titles">
+            <Featured movieIds={[1, 2, 3]} />
+        </div>
+        <div id='homepage-about'>
+            <h2 className="about-title">About GraceBuster</h2>
+            <p className="homepage-paragraphs">GraceBuster, founded in the wake of the Blockbuster era, is a company dedicated to the preservation and promotion of vintage style movies. 
+                Our journey began as a modest venture, fueled by our passion for classic cinema and a desire to keep the spirit of the golden age of film alive. 
+                We saw an opportunity to fill the void left by the downfall of the once-mighty Blockbuster, and with determination and perseverance, we set out to become the new bastion for movie enthusiasts who appreciate the art and charm of vintage films.
+            </p>
+            <p className="homepage-paragraphs">Our humble rise to the forefront of the industry is a testament to the resilience of the GraceBuster team and the unwavering support of our loyal customers. 
+                By staying true to our mission and embracing the lessons from the consequential past, we have become a beacon for those seeking a nostalgic and unique cinematic experience. 
+                Today, we proudly curate an extensive collection of classic movies, ensuring that the timeless stories and memorable moments of the past remain accessible and relevant for generations to come.
+            </p>
+        </div>
+        <div id="homepage-shop">
+            <Link to='/shop' className="home-shop"><h2>Visit Our Shop!</h2></Link>
+            <Featured movieIds={[4,5,6,7,8,9]}/>
+        </div>
+      </div>
+      <footer id="homepage-footer">
+        <Footer />
+      </footer>
+    </>
+  );
 };
 
 export default Home;
