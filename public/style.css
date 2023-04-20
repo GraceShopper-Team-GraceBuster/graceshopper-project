@@ -56,10 +56,13 @@ form div {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s;
+    border: 2px solid black;
+    box-shadow: 5px 2px 2px blue;
 }
 
 .movies:hover {
     transform: scale(1.09);
+    box-shadow: 10px 5px 5px blue;
 }
 
 .movies h2 {
