@@ -17,6 +17,8 @@ const Navbar = () => {
       <nav id="navbar">
         {isLoggedIn ? (
           <div>
+            <Link to="/home">Home</Link>
+            <Link to="/shop">Shop</Link>
             <Link to="/account">Account</Link>
             <button type="button" onClick={logoutAndRedirectHome}>
               Logout
