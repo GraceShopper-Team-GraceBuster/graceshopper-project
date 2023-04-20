@@ -331,7 +331,7 @@ ImageUrl:
   "https://upload.wikimedia.org/wikipedia/en/9/93/Mystic_River_poster.jpg",
 },
 {
-Title: "Space Jfam",
+Title: "Space Jam",
 Genre: "Animation, Adventure, Comedy",
 Director: "Joe Pytka",
 LeadActor: "Michael Jordan",
