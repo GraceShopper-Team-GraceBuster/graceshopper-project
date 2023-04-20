@@ -14,31 +14,35 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav class="navbar">
+            <nav className="navbar">
                 {isLoggedIn ? (
-                    <div class="navbar-container">
+                    <div className="navbar-container">
                         <Link to="/home">
-                            <img src="gracebuster-logo.png" class="logo" />
+                            <img src="gracebuster-logo.png" className="logo" />
                         </Link>
                         <Link to="/shop">
-                            Shop <i class="fa-solid fa-cassette-tape"></i>
+                            Shop <i className="fa-solid fa-cassette-tape"></i>
                         </Link>
                         <Link to="/account">Account</Link>
                         <button type="button" onClick={logoutAndRedirectHome}>
                             Logout
                         </button>
+                        <Link to="/cart">
+                                <i className="fa-solid fa-cart-shopping"></i>
+                                Cart
+                            </Link>
                     </div>
                 ) : (
-                    <div class="navbar-container">
+                    <div className="navbar-container">
                         <Link to="/home">
                             <img src="gracebuster-logo.png" class="logo" />
                         </Link>
-                        <div class="nav-right">
+                        <div className="nav-right">
                             <Link to="/shop">Shop</Link>
                             <Link to="/login">Login</Link>
                             <Link to="/signup">Sign Up</Link>
                             <Link to="/cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i className="fa-solid fa-cart-shopping"></i>
                                 Cart
                             </Link>
                         </div>
