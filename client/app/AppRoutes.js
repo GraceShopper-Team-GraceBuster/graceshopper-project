@@ -26,6 +26,10 @@ const AppRoutes = () => {
         <div>
             {isLoggedIn ? (
                 <Routes>
+                  <Route path="/home" element={<Home />}></Route>
+                    <Route path="/contact" element={<Contact />}></Route>
+                    <Route path="/shop" element={<Shop />} />
+                    <Route path={`/movies/:id`} element={<SingleMovie />} />
                     <Route path="/" element={<Account />} />
                     <Route to="/account" element={<Account />} />
                     <Route
