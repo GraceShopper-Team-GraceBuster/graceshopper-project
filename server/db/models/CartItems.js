@@ -1,5 +1,6 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
+const Cart = require("./Cart");
 const Movies = require("./Movies");
 
 const CartItems = db.define("CartItems", {

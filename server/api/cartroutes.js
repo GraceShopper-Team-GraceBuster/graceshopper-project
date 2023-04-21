@@ -1,11 +1,13 @@
 const router = require("express").Router();
-const { Cart, CartItems, Movies } = require("../db");
+const Cart = require("../db/models/Cart");
+const CartItems = require("../db/models/CartItems");
+const Movies = require("../db/models/Movies");
 
-router.get("/:userId", async (req, res, next) => {
+router.get("/:cartId", async (req, res, next) => {
   try {
-    const userId = req.params.userId;
+    const cartId = req.params.cartId;
     const cartItems = await CartItems.findAll({
-      where: { userId },
+      where: { CartId: cartId },
       include: [Movies],
     });
     res.json(cartItems);
@@ -14,7 +16,6 @@ router.get("/:userId", async (req, res, next) => {
   }
 });
 
-// Add an item to the cart
 router.post("/:userId/add", async (req, res, next) => {
   try {
     const userId = req.params.userId;
@@ -22,17 +23,17 @@ router.post("/:userId/add", async (req, res, next) => {
     const newQuantity = req.body.quantity;
     const userCart = await Cart.findOne({ where: { userId } });
 
-    const cartItem = await CartItems.findOne({
+    const [cartItem, created] = await CartItems.findOrCreate({
       where: { MovieId: movieId, CartId: userCart.id },
+      defaults: { quantity: newQuantity },
     });
 
-    if (cartItem) {
+    if (!created) {
       cartItem.quantity = newQuantity;
       await cartItem.save();
-      res.status(200).json(cartItem);
-    } else {
-      res.status(404).send("Cart item not found");
     }
+
+    res.status(200).json(cartItem);
   } catch (error) {
     next(error);
   }
