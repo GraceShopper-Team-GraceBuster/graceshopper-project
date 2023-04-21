@@ -12,7 +12,7 @@ const OrderPlaced = () => {
                     <h3>Thank you for shopping with us!</h3>
                 </div>
                 <div>
-                    <p>if you have any questions feel free to <Link to='/contact'>contact</Link>us!</p>
+                    <p>if you have any questions feel free to <Link to='/contact' id='contact-link'>contact</Link> us!</p>
                 </div>
             </div>
             <footer>

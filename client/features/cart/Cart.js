@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../footer/Footer";
 import { fetchCartItems } from "../../app/cartSlice";
+import { Link } from "react-router-dom";
 import {
   removeItemFromCart,
   updateCartItemQuantity,
 } from "../../app/cartSlice";
+
 
 function Cart() {
   const dispatch = useDispatch();
@@ -41,6 +43,7 @@ function Cart() {
 
   return (
     <>
+    <div>
       <h1>Cart</h1>
       {cartItems.length === 0 ? (
         <div>Your cart is empty</div>
@@ -91,6 +94,9 @@ function Cart() {
           </tfoot>
         </table>
       )}
+      </div>
+      {/* button that links to OrderPlaced component, simulates checkout */}
+      <Link to="/orderplaced">Checkout</Link>
       <footer>
         <Footer />
       </footer>

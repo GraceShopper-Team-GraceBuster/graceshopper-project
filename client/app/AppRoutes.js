@@ -10,6 +10,7 @@ import Contact from '../features/contact/Contact'
 import Shop from '../features/shop/Shop'
 import SingleMovie from '../features/singleMovie/SingleMovie'
 import Cart from '../features/cart/Cart';
+import OrderPlaced from '../features/order-placed/OrderPlaced'
 
 /**
  * COMPONENT
@@ -33,7 +34,8 @@ const AppRoutes = () => {
                     <Route path={`/movies/:id`} element={<SingleMovie />} />
                     <Route path="/" element={<Account />} />
                     <Route path="/account" element={<Account />} />
-                    <Route path ='/cart' element={<Cart/>}/>
+                    <Route path='/cart' element={<Cart/>}/>
+                    <Route path='/orderplaced' element={<OrderPlaced/>}/>
                     <Route
                         path="/signup"
                         element={
@@ -48,7 +50,7 @@ const AppRoutes = () => {
                     <Route path="/shop" element={<Shop />} />
                     <Route path={`/movies/:id`} element={<SingleMovie />} />
                     <Route path ='/cart' element={<Cart/>}/>
-
+                    <Route path='/orderplaced' element={<OrderPlaced/>}/>
                     <Route
                         path="/login"
                         element={<AuthForm name="login" displayName="Login" />}
