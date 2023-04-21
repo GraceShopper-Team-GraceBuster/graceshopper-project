@@ -17,13 +17,16 @@ function SingleMovie() {
     )
 
     return (
-        <div>
-            <h1>{movie.Title}</h1>
-            <img src={movie.ImageUrl} />
-            <p>{movie.Description}</p>
-            <h3>Price: ${movie.Price}</h3>
-            <button> + </button>
-        </div>
+        <>
+            <div id='single-movie-container'>
+                <h1 className='single-movie-title'>{movie.Title}</h1>
+                <img src={movie.ImageUrl} />
+                <h3>Description:</h3>
+                <p>{movie.Description}</p>
+                <h3>Price: ${movie.Price}</h3>
+                <button id='add-cart-btn'> Add to Cart </button>
+            </div>
+        </>
     )
 }
 
