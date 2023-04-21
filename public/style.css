@@ -119,3 +119,22 @@ form div {
     justify-content: center;
     font-family: 'ITC Machine';
 }
+
+#single-movie-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-movie-title{
+    font-family: 'ITC Machine';
+}
+
+#add-cart-btn{
+    background-color: blue;
+    color: white;
+    border-color: yellow;
+    cursor: pointer;
+    transform: translateY(4px);
+}
