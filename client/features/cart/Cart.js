@@ -92,11 +92,10 @@ function Cart() {
               <td>${totalPrice}</td>
             </tr>
           </tfoot>
+          <Link to="/orderplaced">Checkout</Link>
         </table>
       )}
       </div>
-      {/* button that links to OrderPlaced component, simulates checkout */}
-      <Link to="/orderplaced">Checkout</Link>
       <footer>
         <Footer />
       </footer>
