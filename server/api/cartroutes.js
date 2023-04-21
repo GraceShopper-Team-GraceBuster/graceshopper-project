@@ -20,16 +20,18 @@ router.post("/:userId/add", async (req, res, next) => {
   try {
     const userId = req.params.userId;
     const movieId = req.body.movieId;
-    const newQuantity = req.body.quantity;
-    const userCart = await Cart.findOne({ where: { userId } });
+    let userCart = await Cart.findOne({ where: { userId } });
+    if (!userCart) {
+      userCart = await Cart.create({ userId });
+    }
 
     const [cartItem, created] = await CartItems.findOrCreate({
       where: { MovieId: movieId, CartId: userCart.id },
-      defaults: { quantity: newQuantity },
+      defaults: { quantity: 1 },
     });
 
     if (!created) {
-      cartItem.quantity = newQuantity;
+      cartItem.quantity = cartItem.quantity + 1;
       await cartItem.save();
     }
 
