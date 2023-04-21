@@ -8,7 +8,8 @@ import Movies from '../features/movies/Movies'
 import Home from '../features/home/Home'
 import Contact from '../features/contact/Contact'
 import Shop from '../features/shop/Shop'
-import SingleMovie from '../features/SingleMovie'
+import SingleMovie from '../features/singleMovie/SingleMovie'
+import Cart from '../features/cart/Cart';
 
 /**
  * COMPONENT
@@ -26,8 +27,13 @@ const AppRoutes = () => {
         <div>
             {isLoggedIn ? (
                 <Routes>
+                    <Route path="/home" element={<Home />}></Route>
+                    <Route path="/contact" element={<Contact />}></Route>
+                    <Route path="/shop" element={<Shop />} />
+                    <Route path={`/movies/:id`} element={<SingleMovie />} />
                     <Route path="/" element={<Account />} />
-                    <Route to="/account" element={<Account />} />
+                    <Route path="/account" element={<Account />} />
+                    <Route path ='/cart' element={<Cart/>}/>
                     <Route
                         path="/signup"
                         element={
@@ -41,6 +47,7 @@ const AppRoutes = () => {
                     <Route path="/contact" element={<Contact />}></Route>
                     <Route path="/shop" element={<Shop />} />
                     <Route path={`/movies/:id`} element={<SingleMovie />} />
+                    <Route path ='/cart' element={<Cart/>}/>
 
                     <Route
                         path="/login"

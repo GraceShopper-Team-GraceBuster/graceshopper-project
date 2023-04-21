@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Footer from '../footer/Footer';
 
 /**
  * COMPONENT
@@ -8,9 +9,14 @@ const Account = (props) => {
   const username = useSelector((state) => state.auth.me.username);
 
   return (
-    <div>
-      <h3>Welcome, {username}</h3>
-    </div>
+    <>
+      <div>
+        <h3>Welcome, {username}</h3>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 };
 

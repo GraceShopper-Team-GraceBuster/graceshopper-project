@@ -1,16 +1,16 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../../app/store";
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { logout } from '../../app/store'
 
 const Navbar = () => {
-  const isLoggedIn = useSelector((state) => !!state.auth.me.id);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const logoutAndRedirectHome = () => {
-    dispatch(logout());
-    navigate("/login");
-  };
+    const isLoggedIn = useSelector((state) => !!state.auth.me.id)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const logoutAndRedirectHome = () => {
+        dispatch(logout())
+        navigate('/login')
+    }
 
   return (
     <div>
@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div>
-            <Link to="/home">Home</Link>
+            <Link to="/home">fHome</Link>
             <Link to="/shop">Shop</Link>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
@@ -36,4 +36,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar
