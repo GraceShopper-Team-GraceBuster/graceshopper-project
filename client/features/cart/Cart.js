@@ -8,8 +8,15 @@ function Cart() {
   const cartItems = useSelector((state) => state.cart);
   const userId = useSelector((state) => state.auth.me.id);
   useEffect(() => {
-    dispatch(fetchCartItems(userId));
+    if (userId) {
+      dispatch(fetchCartItems(userId));
+    }
   }, [dispatch, userId]);
+
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.quantity * item.Movie.Price,
+    0
+  );
 
   return (
     <>
@@ -37,6 +44,10 @@ function Cart() {
                 )
             )}
           </tbody>
+          <tfoot>
+            <td colSpan={2}>Total Price:</td>
+            <td>${totalPrice}</td>
+          </tfoot>
         </table>
       )}
       <footer>
