@@ -349,18 +349,26 @@ async function seed() {
   console.log("db synced!");
 
   // Creating Users
-  const users = await Promise.all([
-    User.create({
-      username: "cody",
-      password: "123",
-      email: "cody@example.com",
-    }),
-    User.create({
-      username: "murphy",
-      password: "123",
-      email: "murphy@example.com",
-    }),
-  ]);
+const users = await Promise.all([
+  User.create({
+    username: "cody",
+    password: "123",
+    email: "cody@example.com",
+  }),
+  User.create({
+    username: "murphy",
+    password: "123",
+    email: "murphy@example.com",
+  }),
+]);
+
+// Create admin user
+const admin = await User.create({
+  username: "admin",
+  password: "admin123",
+  email: "admin@example.com",
+  isAdmin: true,
+});
 
   const createdMovies = await Promise.all(
     movies.map((movie) => {
@@ -368,25 +376,7 @@ async function seed() {
     })
   );
 
-  const carts = await Promise.all([
-    Cart.create({ userId: users[0].id }),
-    Cart.create({ userId: users[1].id }),
-  ]);
-
-  await CartItems.create({
-    quantity: 1,
-    MovieId: 1,
-    CartId: 1,
-  });
-
-  await CartItems.create({
-    quantity: 2,
-    MovieId: 2,
-    CartId: 2,
-  });
-
   console.log(`seeded ${users.length} users`);
-  console.log(`seeded ${carts.length} carts`);
   console.log(`seeded ${createdMovies.length} movies`);
   console.log(`seeded successfully`);
   return {
@@ -395,7 +385,6 @@ async function seed() {
       murphy: users[1],
     },
     movies: createdMovies,
-    carts: carts,
   };
 }
 
