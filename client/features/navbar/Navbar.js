@@ -12,28 +12,46 @@ const Navbar = () => {
         navigate('/login')
     }
 
-  return (
-    <div>
-      <nav id="navbar">
-        {isLoggedIn ? (
-          <div>
-            <Link to="/account">Account</Link>
-            <button type="button" onClick={logoutAndRedirectHome}>
-              Logout
-            </button>
-          </div>
-        ) : (
-          <div>
-            <Link to="/home">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
-          </div>
-        )}
-      </nav>
-      <hr />
-    </div>
-  );
-};
+    return (
+        <div>
+            <nav className="navbar">
+                {isLoggedIn ? (
+                    <div className="navbar-container">
+                        <Link to="/home">
+                            <img src="gracebuster-logo.png" className="logo" />
+                        </Link>
+                        <Link to="/shop">
+                            Shop <i className="fa-solid fa-cassette-tape"></i>
+                        </Link>
+                        <Link to="/account">Account</Link>
+                        <button type="button" onClick={logoutAndRedirectHome}>
+                            Logout
+                        </button>
+                        <Link to="/cart">
+                                <i className="fa-solid fa-cart-shopping"></i>
+                                Cart
+                            </Link>
+                    </div>
+                ) : (
+                    <div className="navbar-container">
+                        <Link to="/home">
+                            <img src="gracebuster-logo.png" class="logo" />
+                        </Link>
+                        <div className="nav-right">
+                            <Link to="/shop">Shop</Link>
+                            <Link to="/login">Login</Link>
+                            <Link to="/signup">Sign Up</Link>
+                            <Link to="/cart">
+                                <i className="fa-solid fa-cart-shopping"></i>
+                                Cart
+                            </Link>
+                        </div>
+                    </div>
+                )}
+            </nav>
+            <hr />
+        </div>
+    )
+}
 
 export default Navbar
