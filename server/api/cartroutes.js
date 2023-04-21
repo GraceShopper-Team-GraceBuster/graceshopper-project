@@ -1,35 +1,89 @@
-import express from 'express';
-import path from 'path';
-import { ShoppingCart } from '../public/cart.js';
+const router = require("express").Router();
+const { Cart, CartItems, Movies } = require("../db");
 
-const router = express.Router();
-const cart = new ShoppingCart();
-
-router.post('/add-to-cart', (req, res) => {
-  const item = req.body;
-  cart.addItem(item);
-  res.redirect('/cart');
+router.get("/:userId", async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    const cartItems = await CartItems.findAll({
+      where: { userId },
+      include: [Movies],
+    });
+    res.json(cartItems);
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.post('/remove-from-cart', (req, res) => {
-  const itemId = req.body.itemId;
-  cart.removeItem(itemId);
-  res.redirect('/cart');
+// Add an item to the cart
+router.post("/:userId/add", async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    const movieId = req.body.movieId;
+    const newQuantity = req.body.quantity;
+    const userCart = await Cart.findOne({ where: { userId } });
+
+    const cartItem = await CartItems.findOne({
+      where: { MovieId: movieId, CartId: userCart.id },
+    });
+
+    if (cartItem) {
+      cartItem.quantity = newQuantity;
+      await cartItem.save();
+      res.status(200).json(cartItem);
+    } else {
+      res.status(404).send("Cart item not found");
+    }
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.post('/update-cart-quantity', (req, res) => {
-  const itemId = req.body.itemId;
-  const quantity = req.body.quantity;
-  cart.updateItemQuantity(itemId, quantity);
-  res.redirect('/cart');
+// Update the quantity of a movie in the user's cart
+router.put("/:userId/update", async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    const movieId = req.body.movieId;
+    const newQuantity = req.body.quantity;
+    const userCart = await Cart.findOne({ where: { userId } });
+
+    const cartItem = await CartItems.findOne({
+      where: { MovieId: movieId, CartId: userCart.id },
+    });
+
+    if (cartItem) {
+      cartItem.quantity = newQuantity;
+      await cartItem.save();
+      res.status(200).json(cartItem);
+    } else {
+      res.status(404).send("Cart item not found");
+    }
+  } catch (err) {
+    next(err);
+  }
 });
 
-// other routes and handlers as needed 
+// Remove a movie from the user's cart
+router.delete("/:userId/remove", async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    const movieId = req.body.movieId;
+    const userCart = await Cart.findOne({ where: { userId } });
 
-// Serve the index.html file
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    const cartItem = await CartItems.findOne({
+      where: { MovieId: movieId, CartId: userCart.id },
+    });
+
+    if (cartItem) {
+      await cartItem.destroy();
+      res.status(204).end();
+    } else {
+      res.status(404).send("Cart item not found");
+    }
+  } catch (err) {
+    next(err);
+  }
 });
 
-export default router;
+module.exports = router;
 
+module.exports = router;
