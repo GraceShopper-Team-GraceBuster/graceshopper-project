@@ -2,7 +2,7 @@
 
 const {
   db,
-  models: { User, Movies },
+  models: { User, Movies, Cart, CartItems },
 } = require("../server/db");
 
 const movies = [
@@ -227,8 +227,7 @@ const movies = [
     Description:
       "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
     Price: 20,
-    ImageUrl:
-      "https://upload.wikimedia.org/wikipedia/en/7/7b/Goodfellas.jpg",
+    ImageUrl: "https://upload.wikimedia.org/wikipedia/en/7/7b/Goodfellas.jpg",
   },
   {
     Title: "Star Wars: Episode V - The Empire Strikes Back",
@@ -274,73 +273,71 @@ const movies = [
     ImageUrl:
       "https://upload.wikimedia.org/wikipedia/en/6/68/Seven_%28movie%29_poster.jpg",
   },
-{
-
-Title: "Tombstone",
-Genre: "Action, Drama, History",
-Director: "George P. Cosmatos, Kevin Jarre",
-LeadActor: "Kurt Russell",
-Description:
-  "A successful lawman's plans to retire anonymously in Tombstone, Arizona, are disrupted by the kind of outlaws he was famous for eliminating.",
-Price: 20,
-ImageUrl:
-  "https://upload.wikimedia.org/wikipedia/en/7/71/Tombstoneposter.jpeg",
-},
-{
-Title: "Casino",
-Genre: "Crime, Drama",
-Director: "Martin Scorsese",
-LeadActor: "Robert De Niro",
-Description:
-  "A tale of greed, deception, money, power, and murder occur between two best friends: a mafia enforcer and a casino executive, compete against each other over a gambling empire, and over a fast-living and fast-loving socialite.",
-Price: 20,
-ImageUrl:
-  "https://upload.wikimedia.org/wikipedia/en/d/d8/Casino_poster.jpg",
-},
-{
-Title: "Billy Madison",
-Genre: "Comedy",
-Director: "Tamra Davis",
-LeadActor: "Adam Sandler",
-Description:
-  "In order to inherit his fed up father's hotel empire, an immature and lazy man must repeat grades 1-12 all over again.",
-Price: 20,
-ImageUrl:
-  "https://upload.wikimedia.org/wikipedia/en/0/07/Billy_madison_poster.jpg",
-},
-{
-Title: "Scarface",
-Genre: "Crime, Drama",
-Director: "Brian De Palma",
-LeadActor: "Al Pacino",
-Description:
-  "In Miami in 1980, a determined Cuban immigrant takes over a drug cartel and succumbs to greed.",
-Price: 20,
-ImageUrl:
-  "https://upload.wikimedia.org/wikipedia/en/7/71/Scarface_-_1983_film.jpg",
-},
-{
-Title: "Mystic River",
-Genre: "Crime, Drama, Mystery",
-Director: "Clint Eastwood",
-LeadActor: "Sean Penn",
-Description:
-  "With a childhood tragedy that overshadowed their lives, three men are reunited by circumstance when one loses a daughter.",
-Price: 20,
-ImageUrl:
-  "https://upload.wikimedia.org/wikipedia/en/9/93/Mystic_River_poster.jpg",
-},
-{
-Title: "Space Jam",
-Genre: "Animation, Adventure, Comedy",
-Director: "Joe Pytka",
-LeadActor: "Michael Jordan",
-Description:
-  "In a desperate attempt to win a basketball match and earn their freedom, the Looney Tunes seek the aid of retired basketball champion, Michael Jordan.",
-Price: 20,
-ImageUrl:
-  "https://upload.wikimedia.org/wikipedia/en/1/14/Space_jam.jpg",
-},
+  {
+    Title: "Tombstone",
+    Genre: "Action, Drama, History",
+    Director: "George P. Cosmatos, Kevin Jarre",
+    LeadActor: "Kurt Russell",
+    Description:
+      "A successful lawman's plans to retire anonymously in Tombstone, Arizona, are disrupted by the kind of outlaws he was famous for eliminating.",
+    Price: 20,
+    ImageUrl:
+      "https://upload.wikimedia.org/wikipedia/en/7/71/Tombstoneposter.jpeg",
+  },
+  {
+    Title: "Casino",
+    Genre: "Crime, Drama",
+    Director: "Martin Scorsese",
+    LeadActor: "Robert De Niro",
+    Description:
+      "A tale of greed, deception, money, power, and murder occur between two best friends: a mafia enforcer and a casino executive, compete against each other over a gambling empire, and over a fast-living and fast-loving socialite.",
+    Price: 20,
+    ImageUrl:
+      "https://upload.wikimedia.org/wikipedia/en/d/d8/Casino_poster.jpg",
+  },
+  {
+    Title: "Billy Madison",
+    Genre: "Comedy",
+    Director: "Tamra Davis",
+    LeadActor: "Adam Sandler",
+    Description:
+      "In order to inherit his fed up father's hotel empire, an immature and lazy man must repeat grades 1-12 all over again.",
+    Price: 20,
+    ImageUrl:
+      "https://upload.wikimedia.org/wikipedia/en/0/07/Billy_madison_poster.jpg",
+  },
+  {
+    Title: "Scarface",
+    Genre: "Crime, Drama",
+    Director: "Brian De Palma",
+    LeadActor: "Al Pacino",
+    Description:
+      "In Miami in 1980, a determined Cuban immigrant takes over a drug cartel and succumbs to greed.",
+    Price: 20,
+    ImageUrl:
+      "https://upload.wikimedia.org/wikipedia/en/7/71/Scarface_-_1983_film.jpg",
+  },
+  {
+    Title: "Mystic River",
+    Genre: "Crime, Drama, Mystery",
+    Director: "Clint Eastwood",
+    LeadActor: "Sean Penn",
+    Description:
+      "With a childhood tragedy that overshadowed their lives, three men are reunited by circumstance when one loses a daughter.",
+    Price: 20,
+    ImageUrl:
+      "https://upload.wikimedia.org/wikipedia/en/9/93/Mystic_River_poster.jpg",
+  },
+  {
+    Title: "Space Jam",
+    Genre: "Animation, Adventure, Comedy",
+    Director: "Joe Pytka",
+    LeadActor: "Michael Jordan",
+    Description:
+      "In a desperate attempt to win a basketball match and earn their freedom, the Looney Tunes seek the aid of retired basketball champion, Michael Jordan.",
+    Price: 20,
+    ImageUrl: "https://upload.wikimedia.org/wikipedia/en/1/14/Space_jam.jpg",
+  },
 ];
 
 /**
@@ -371,7 +368,25 @@ async function seed() {
     })
   );
 
+  const carts = await Promise.all([
+    Cart.create({ userId: users[0].id }),
+    Cart.create({ userId: users[1].id }),
+  ]);
+
+  await CartItems.create({
+    quantity: 1,
+    MovieId: 1,
+    CartId: 1,
+  });
+
+  await CartItems.create({
+    quantity: 2,
+    MovieId: 2,
+    CartId: 2,
+  });
+
   console.log(`seeded ${users.length} users`);
+  console.log(`seeded ${carts.length} carts`);
   console.log(`seeded ${createdMovies.length} movies`);
   console.log(`seeded successfully`);
   return {
@@ -380,6 +395,7 @@ async function seed() {
       murphy: users[1],
     },
     movies: createdMovies,
+    carts: carts,
   };
 }
 
