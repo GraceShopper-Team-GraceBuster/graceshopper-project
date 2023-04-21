@@ -14,7 +14,10 @@ function Cart() {
   }, [dispatch, userId]);
 
   const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.quantity * item.Movie.Price,
+    (acc, item) =>
+      item.Movie && item.Movie.Price
+        ? acc + item.quantity * item.Movie.Price
+        : acc,
     0
   );
 
@@ -45,8 +48,10 @@ function Cart() {
             )}
           </tbody>
           <tfoot>
-            <td colSpan={2}>Total Price:</td>
-            <td>${totalPrice}</td>
+            <tr>
+              <td colSpan={2}>Total Price:</td>
+              <td>${totalPrice}</td>
+            </tr>
           </tfoot>
         </table>
       )}
