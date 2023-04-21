@@ -352,35 +352,46 @@ async function seed() {
   console.log("db synced!");
 
   // Creating Users
-  const users = await Promise.all([
-    User.create({
-      username: "cody",
-      password: "123",
-      email: "cody@example.com",
-    }),
-    User.create({
-      username: "murphy",
-      password: "123",
-      email: "murphy@example.com",
-    }),
-  ]);
+const users = await Promise.all([
+  User.create({
+    username: "cody",
+    password: "123",
+    email: "cody@example.com",
+  }),
+  User.create({
+    username: "murphy",
+    password: "123",
+    email: "murphy@example.com",
+  }),
+]);
 
-  const createdMovies = await Promise.all(
-    movies.map((movie) => {
-      return Movies.create(movie);
-    })
-  );
+// Create admin user
+const admin = await User.create({
+  username: "admin",
+  password: "admin123",
+  email: "admin@example.com",
+  isAdmin: true,
+});
 
-  console.log(`seeded ${users.length} users`);
-  console.log(`seeded ${createdMovies.length} movies`);
-  console.log(`seeded successfully`);
-  return {
-    users: {
-      cody: users[0],
-      murphy: users[1],
-    },
-    movies: createdMovies,
-  };
+const createdMovies = await Promise.all(
+  movies.map((movie) => {
+    return Movies.create(movie);
+  })
+);
+
+console.log(`seeded ${users.length + 1} users`); // Add 1 for the admin user
+console.log(`seeded ${createdMovies.length} movies`);
+console.log(`seeded successfully`);
+
+return {
+  users: {
+    cody: users[0],
+    murphy: users[1],
+    admin: admin, // Add admin to the return object
+  },
+  movies: createdMovies,
+};
+
 }
 
 /*
