@@ -48,9 +48,11 @@ const cartSlice = createSlice({
     });
     builder.addCase(updateCartItemQuantity.fulfilled, (state, action) => {
       const index = state.findIndex(
-        (item) => item.MovieId === action.payload.MovieId
+        (item) => item.Movie.id === action.payload.MovieId
       );
-      state[index] = action.payload;
+      if (index !== -1) {
+        state[index].quantity = action.payload.quantity;
+      }
     });
     builder.addCase(removeItemFromCart.fulfilled, (state, action) => {
       return state.filter((item) => item.MovieId !== action.payload);
