@@ -48,6 +48,7 @@ export const authenticate = createAsyncThunk(
                 return 'There was an issue with your request.'
             }
         }
+
     }
 )
 
