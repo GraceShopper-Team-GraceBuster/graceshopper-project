@@ -349,18 +349,26 @@ async function seed() {
   console.log("db synced!");
 
   // Creating Users
-  const users = await Promise.all([
-    User.create({
-      username: "cody",
-      password: "123",
-      email: "cody@example.com",
-    }),
-    User.create({
-      username: "murphy",
-      password: "123",
-      email: "murphy@example.com",
-    }),
-  ]);
+const users = await Promise.all([
+  User.create({
+    username: "cody",
+    password: "123",
+    email: "cody@example.com",
+  }),
+  User.create({
+    username: "murphy",
+    password: "123",
+    email: "murphy@example.com",
+  }),
+]);
+
+// Create admin user
+const admin = await User.create({
+  username: "admin",
+  password: "admin123",
+  email: "admin@example.com",
+  isAdmin: true,
+});
 
   const createdMovies = await Promise.all(
     movies.map((movie) => {

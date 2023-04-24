@@ -4,6 +4,7 @@ import Footer from '../footer/Footer'
 import Movies from '../movies/Movies'
 
 const Shop = () => {
+
     return (
         <>
             <div>
