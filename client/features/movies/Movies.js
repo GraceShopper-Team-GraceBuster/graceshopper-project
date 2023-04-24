@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { addItemToCart } from "../../app/cartSlice";
 import { fetchMovies } from "../../app/movieSlice";
+import { addToLocalStorageCart } from "../../app/localCartHelpers";
 
 function Movie() {
   const dispatch = useDispatch();
@@ -13,8 +14,13 @@ function Movie() {
     dispatch(fetchMovies());
   }, [dispatch]);
 
-  const handleAddToCart = (movieId) => {
-    dispatch(addItemToCart({ userId, movieId }));
+  const handleAddToCart = (movie) => {
+    if (userId) {
+      dispatch(addItemToCart({ userId, movieId: movie.id }));
+    } else {
+      console.log(movie);
+      addToLocalStorageCart(movie);
+    }
   };
 
   return (
@@ -29,7 +35,7 @@ function Movie() {
             </NavLink>
             <button
               onClick={() => {
-                handleAddToCart(movie.id);
+                handleAddToCart(movie);
               }}
             >
               Add to Cart

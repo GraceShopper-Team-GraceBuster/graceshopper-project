@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import AuthForm from "../features/auth/AuthForm";
 import { me } from "./store";
 import Account from "../features/account/Account";
-import Movies from "../features/movies/Movies";
 import Home from "../features/home/Home";
 import Contact from "../features/contact/Contact";
 import Shop from "../features/shop/Shop";
