@@ -22,6 +22,7 @@ function Cart() {
 
   useEffect(() => {
     if (userId) {
+
       if (JSON.stringify(loggedInCartItems) !== JSON.stringify(cartItems)) {
         dispatch(fetchCartItems(userId));
         setCartItems((prevCartItems) => {
@@ -68,6 +69,7 @@ function Cart() {
       dispatch(
         updateCartItemQuantity({ userId, movieId, quantity: newQuantity })
       );
+
       setCartItems((prevCartItems) =>
         prevCartItems.map((item) =>
           item.id === movieId ? { ...item, quantity: newQuantity } : item
