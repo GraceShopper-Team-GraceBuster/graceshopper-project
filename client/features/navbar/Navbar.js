@@ -28,9 +28,9 @@ const Navbar = () => {
                             Logout
                         </button>
                         <Link to="/cart">
-                                <i className="fa-solid fa-cart-shopping"></i>
-                                Cart
-                            </Link>
+                            <i className="fa-solid fa-cart-shopping"></i>
+                            Cart
+                        </Link>
                     </div>
                 ) : (
                     <div className="navbar-container">
@@ -49,7 +49,6 @@ const Navbar = () => {
                     </div>
                 )}
             </nav>
-            <hr />
         </div>
     )
 }
