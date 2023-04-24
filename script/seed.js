@@ -376,7 +376,25 @@ const admin = await User.create({
     })
   );
 
+  const carts = await Promise.all([
+    Cart.create({ userId: users[0].id }),
+    Cart.create({ userId: users[1].id }),
+  ]);
+
+  await CartItems.create({
+    quantity: 1,
+    MovieId: 1,
+    CartId: 1,
+  });
+
+  await CartItems.create({
+    quantity: 2,
+    MovieId: 2,
+    CartId: 2,
+  });
+
   console.log(`seeded ${users.length} users`);
+  console.log(`seeded ${carts.length} carts`);
   console.log(`seeded ${createdMovies.length} movies`);
   console.log(`seeded successfully`);
   return {
@@ -385,6 +403,7 @@ const admin = await User.create({
       murphy: users[1],
     },
     movies: createdMovies,
+    carts: carts,
   };
 }
 

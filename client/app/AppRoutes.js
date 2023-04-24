@@ -12,6 +12,7 @@ import SingleMovie from '../features/singleMovie/SingleMovie'
 import Cart from '../features/cart/Cart';
 import OrderPlaced from '../features/order-placed/OrderPlaced'
 
+
 /**
  * COMPONENT
  */

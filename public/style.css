@@ -1,144 +1,251 @@
+body {
+    margin: 0;
+    font-size: 22px;
+    background: linear-gradient(
+        0deg,
+        rgba(235, 235, 235, 1) 85%,
+        rgba(212, 179, 35, 1) 100%
+    );
+}
+
+/* ----------------------- */
+
+/*    <a> Tag Styling      */
+
+/* ----------------------- */
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-nav a {
-  margin: 1em;
+.movies > a,
+a:visited {
+    color: black;
 }
 
-form div {
-  margin: 1em;
-  display: inline-block;
-}
+/* ---------------------- */
+
+/*      Logo Styling      */
+
+/* ---------------------- */
 
 .logo {
-  width: 150px;
-  align-items: center;
+    width: 200px;
+    align-items: center;
 }
 
-.navbar {
-  display: flex;
+.logo:hover {
+    animation: rotation 0.7s linear;
 }
+
+/* ----------------------- */
+
+/*      NavBar Styling     */
+
+/* ----------------------- */
 
 .navbar-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  font-size: 20px;
+    border-bottom: 2px black solid;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .nav-right {
-  /* display: flex; */
-  justify-content: center;
-  border: black 1px solid;
-  margin-left: auto;
+    margin-left: auto;
+    margin-right: 50px;
+    font-size: 1.75rem;
 }
 
-@font-face {
-  font-family: "ITC Machine";
-  src: url("MachineStd.otf") format("opentype");
+.nav-right > a:hover {
+    font-size: 1.85rem;
+    background-color: #fff;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: bold;
 }
+
+nav a {
+    margin: 1em;
+}
+
+/* --------------------- */
+
+/*         Movies        */
+
+/* --------------------- */
 
 .movie-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .movies {
-  width: 470px;
-  margin: 8px 8px 40px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-  border: 2px solid black;
-  box-shadow: 5px 2px 2px blue;
+    width: 470px;
+    height: 530px;
+    margin: 8px 2px 40px 2px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.movie-images {
+    width: 250px;
+    height: 400px;
 }
 
 .movies:hover {
-  transform: scale(1.09);
-  box-shadow: 10px 5px 5px blue;
+    transform: scale(1.09);
+    box-shadow: 1px 1px 7px black;
 }
 
 .movies h2 {
-  padding-top: 20px;
-  margin: 2px;
+    padding: 20px;
+    margin: 2px;
 }
 
 .movies h3 {
-  margin: 2px;
+    margin: 2px;
 }
 
-#homepage-title {
-  text-align: center;
-  font-family: "ITC Machine";
+/* ----------------------- */
+
+/*       Home Title        */
+
+/* ----------------------- */
+
+.homepage-title {
+    margin: 100px;
 }
 
-#footer-ctr {
-  display: flex;
-  justify-content: left;
-  align-items: center;
+/* ----------------------- */
+
+/*      About Section      */
+
+/* ----------------------- */
+
+.about-container {
+    background-color: white;
+    text-align: center;
+    max-width: 750px;
+    margin: 10px auto 50px auto;
+    border-radius: 10px;
+    padding: 20px 200px;
+    box-shadow: 1px 1px 7px black;
 }
 
-#copyright {
-  padding: 5px;
+/* ---------------- */
+
+/*      Footer      */
+
+/* ---------------- */
+
+footer {
+    background-color: black;
+    color: white;
 }
 
-#homepage-about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-indent: 30px;
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
 }
 
-.about-title {
-  font-family: "ITC Machine";
-  text-align: center;
-  margin-right: 50px;
+.contact-btn {
+    border-radius: 5px;
+    margin: 10px;
+    width: 100px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 19px;
 }
 
-.homepage-paragraphs {
-  max-width: 650px;
+/* --------------------------------- */
+
+/*      Imported Font for titles
+               and styling           */
+
+/* --------------------------------- */
+
+.about-title,
+.home-shop,
+.homepage-title {
+    font-family: 'ITC Machine';
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 29px;
 }
 
-.home-shop {
-  font-family: "ITC Machine";
-  display: flex;
-  justify-content: center;
+@font-face {
+    font-family: 'ITC Machine';
+    src: url('MachineStd.otf') format('opentype');
 }
 
-#shop-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "ITC Machine";
+/* ----------------------- */
+
+/*        Animation        */
+
+/* ----------------------- */
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }
 
-#single-movie-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.single-movie-title {
-  font-family: "ITC Machine";
-}
 
-#add-cart-btn {
-  background-color: blue;
-  color: white;
-  border-color: yellow;
-  cursor: pointer;
-  transform: translateY(4px);
-}
 
-tfoot {
-  font-weight: bold;
-}
+
+
+
+
+
+
+/* animation: shake 0.5s;
+animation-iteration-count: infinite; */
+
+/* @keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+} */

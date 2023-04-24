@@ -20,6 +20,7 @@ router.post("/:userId/add", async (req, res, next) => {
   try {
     const userId = req.params.userId;
     const movieId = req.body.movieId;
+
     let userCart = await Cart.findOne({ where: { userId } });
     if (!userCart) {
       userCart = await Cart.create({ userId });
