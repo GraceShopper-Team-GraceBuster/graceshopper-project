@@ -16,15 +16,15 @@ const User = db.define("user", {
     type: Sequelize.STRING,
   },
 
-  email: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-      notNull: true,
-      isEmail: true,
-    },
-  },
+  // email: {
+  //   type: Sequelize.STRING,
+  //   allowNull: false,
+  //   validate: {
+  //     notEmpty: true,
+  //     notNull: true,
+  //     isEmail: true,
+  //   },
+  // },
 });
 
 module.exports = User;
