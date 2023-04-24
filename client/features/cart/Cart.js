@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../footer/Footer";
 import { fetchCartItems } from "../../app/cartSlice";
@@ -7,55 +7,37 @@ import {
   removeItemFromCart,
   updateCartItemQuantity,
 } from "../../app/cartSlice";
-import {
-  getLocalStorageCart,
-  updateLocalStorageCartItemQuantity,
-  removeLocalStorageCartItem,
-} from "../../app/localCartHelpers";
 
 function Cart() {
   const dispatch = useDispatch();
-  const loggedInCartItems = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.cart);
   const userId = useSelector((state) => state.auth.me.id);
-
-  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     if (userId) {
       dispatch(fetchCartItems(userId));
-      setCartItems(loggedInCartItems);
-    } else {
-      const localStorageCart = getLocalStorageCart();
-      setCartItems(localStorageCart);
     }
-  }, [dispatch, userId, loggedInCartItems]);
+  }, [dispatch, userId]);
 
   const totalPrice = cartItems.reduce(
-    (acc, item) => acc + (item.Price ? item.quantity * item.Price : 0),
+    (acc, item) =>
+      item.Movie && item.Movie.Price
+        ? acc + item.quantity * item.Movie.Price
+        : acc,
     0
   );
 
   const handleDeleteItem = (movieId) => {
-    if (userId) {
-      dispatch(removeItemFromCart({ userId, movieId }));
-    } else {
-      removeLocalStorageCartItem(movieId);
-      setCartItems(getLocalStorageCart());
-    }
+    dispatch(removeItemFromCart({ userId, movieId }));
   };
 
   const handleQuantityChange = (movieId, newQuantity) => {
     if (!newQuantity) {
       return;
     }
-    if (userId) {
-      dispatch(
-        updateCartItemQuantity({ userId, movieId, quantity: newQuantity })
-      );
-    } else {
-      updateLocalStorageCartItemQuantity(movieId, newQuantity);
-      setCartItems(getLocalStorageCart());
-    }
+    dispatch(
+      updateCartItemQuantity({ userId, movieId, quantity: newQuantity })
+    );
   };
 
   return (
@@ -65,22 +47,21 @@ function Cart() {
         {cartItems.length === 0 ? (
           <div>Your cart is empty</div>
         ) : (
-          <>
-            <table>
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Remove</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cartItems.map((item) => {
-                  const movie = userId && item.Movie ? item.Movie : item;
-                  return (
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartItems.map(
+                (item) =>
+                  item.Movie && (
                     <tr key={item.id}>
-                      <td>{movie.Title}</td>
+                      <td>{item.Movie.Title}</td>
                       <td>
                         <input
                           type="number"
@@ -88,31 +69,30 @@ function Cart() {
                           min="1"
                           onChange={(e) =>
                             handleQuantityChange(
-                              movie.id,
+                              item.Movie.id,
                               parseInt(e.target.value)
                             )
                           }
                         />
                       </td>
-                      <td>${movie.Price * item.quantity}</td>
+                      <td>${item.Movie.Price * item.quantity}</td>
                       <td>
-                        <button onClick={() => handleDeleteItem(movie.id)}>
+                        <button onClick={() => handleDeleteItem(item.Movie.id)}>
                           <i className="fa-solid fa-trash-can"></i>
                         </button>
                       </td>
                     </tr>
-                  );
-                })}
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colSpan={2}>Total Price:</td>
-                  <td>${totalPrice}</td>
-                </tr>
-              </tfoot>
-            </table>
+                  )
+              )}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan={2}>Total Price:</td>
+                <td>${totalPrice}</td>
+              </tr>
+            </tfoot>
             <Link to="/orderplaced">Checkout</Link>
-          </>
+          </table>
         )}
       </div>
       <footer>
