@@ -1,6 +1,7 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { authenticate } from '../../app/store';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { authenticate } from "../../app/store";
+import Footer from "../footer/Footer";
 
 /**
   The AuthForm component can be used for Login or Sign Up.
@@ -21,7 +22,7 @@ const AuthForm = ({ name, displayName }) => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <form onSubmit={handleSubmit} name={name}>
         <div>
           <label htmlFor="username">
@@ -40,6 +41,9 @@ const AuthForm = ({ name, displayName }) => {
         </div>
         {error && <div> {error} </div>}
       </form>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

@@ -1,11 +1,34 @@
 body {
-    margin: 0;
-    font-size: 22px;
-    background: linear-gradient(
-        0deg,
-        rgba(235, 235, 235, 1) 85%,
-        rgba(212, 179, 35, 1) 100%
-    );
+  margin: 0;
+  font-size: 22px;
+  background: linear-gradient(
+    0deg,
+    rgba(235, 235, 235, 1) 85%,
+    rgba(212, 179, 35, 1) 100%
+  );
+}
+
+/* ----------------------- */
+
+/*    Footer Styling       */
+
+/* ----------------------- */
+
+.account-container,
+.cart-container {
+  min-height: calc(100vh - 272px);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container {
+  min-height: calc(100vh - 172px);
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
 }
 
 /* ----------------------- */
@@ -15,12 +38,12 @@ body {
 /* ----------------------- */
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .movies > a,
 a:visited {
-    color: black;
+  color: black;
 }
 
 /* ---------------------- */
@@ -30,12 +53,12 @@ a:visited {
 /* ---------------------- */
 
 .logo {
-    width: 200px;
-    align-items: center;
+  width: 200px;
+  align-items: center;
 }
 
 .logo:hover {
-    animation: rotation 0.7s linear;
+  animation: rotation 0.7s linear;
 }
 
 /* ----------------------- */
@@ -45,29 +68,29 @@ a:visited {
 /* ----------------------- */
 
 .navbar-container {
-    border-bottom: 2px black solid;
-    display: flex;
-    align-items: center;
-    width: 100%;
+  border-bottom: 2px black solid;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .nav-right {
-    margin-left: auto;
-    margin-right: 50px;
-    font-size: 1.75rem;
+  margin-left: auto;
+  margin-right: 50px;
+  font-size: 1.75rem;
 }
 
 .nav-right > a:hover {
-    font-size: 1.85rem;
-    background-color: #fff;
-    color: black;
-    padding: 15px 30px;
-    border-radius: 4px;
-    font-weight: bold;
+  font-size: 1.85rem;
+  background-color: #fff;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 nav a {
-    margin: 1em;
+  margin: 1em;
 }
 
 /* --------------------- */
@@ -77,40 +100,40 @@ nav a {
 /* --------------------- */
 
 .movie-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .movies {
-    width: 470px;
-    height: 530px;
-    margin: 8px 2px 40px 2px;
-    padding: 25px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #fff;
-    border-radius: 10px;
-    transition: transform 0.3s;
+  width: 470px;
+  height: 530px;
+  margin: 8px 2px 40px 2px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
 .movie-images {
-    width: 250px;
-    height: 400px;
+  width: 250px;
+  height: 400px;
 }
 
 .movies:hover {
-    transform: scale(1.09);
-    box-shadow: 1px 1px 7px black;
+  transform: scale(1.09);
+  box-shadow: 1px 1px 7px black;
 }
 
 .movies h2 {
-    padding: 20px;
-    margin: 2px;
+  padding: 20px;
+  margin: 2px;
 }
 
 .movies h3 {
-    margin: 2px;
+  margin: 2px;
 }
 
 /* ----------------------- */
@@ -120,7 +143,7 @@ nav a {
 /* ----------------------- */
 
 .homepage-title {
-    margin: 100px;
+  margin: 100px;
 }
 
 /* ----------------------- */
@@ -130,13 +153,13 @@ nav a {
 /* ----------------------- */
 
 .about-container {
-    background-color: white;
-    text-align: center;
-    max-width: 750px;
-    margin: 10px auto 50px auto;
-    border-radius: 10px;
-    padding: 20px 200px;
-    box-shadow: 1px 1px 7px black;
+  background-color: white;
+  text-align: center;
+  max-width: 750px;
+  margin: 10px auto 50px auto;
+  border-radius: 10px;
+  padding: 20px 200px;
+  box-shadow: 1px 1px 7px black;
 }
 
 /* ---------------- */
@@ -146,24 +169,24 @@ nav a {
 /* ---------------- */
 
 footer {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
 .contact-btn {
-    border-radius: 5px;
-    margin: 10px;
-    width: 100px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 19px;
+  border-radius: 5px;
+  margin: 10px;
+  width: 100px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 19px;
 }
 
 /* --------------------------------- */
@@ -176,15 +199,15 @@ footer {
 .about-title,
 .home-shop,
 .homepage-title {
-    font-family: 'ITC Machine';
-    letter-spacing: 3px;
-    text-align: center;
-    font-size: 29px;
+  font-family: "ITC Machine";
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 29px;
 }
 
 @font-face {
-    font-family: 'ITC Machine';
-    src: url('MachineStd.otf') format('opentype');
+  font-family: "ITC Machine";
+  src: url("MachineStd.otf") format("opentype");
 }
 
 /* ----------------------- */
@@ -194,22 +217,13 @@ footer {
 /* ----------------------- */
 
 @keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
-
-
-
-
-
-
-
-
-
 
 /* animation: shake 0.5s;
 animation-iteration-count: infinite; */
