@@ -39,7 +39,7 @@ const AuthForm = ({ name, displayName }) => {
         <div>
           <button type="submit">{displayName}</button>
         </div>
-        {error && <div> {error} </div>}
+        {error && <div> {error.message} </div>}
       </form>
       <footer>
         <Footer />
