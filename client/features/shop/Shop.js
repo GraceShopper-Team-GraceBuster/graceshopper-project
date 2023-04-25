@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../footer/Footer'
 import Movies from '../movies/Movies'
 
 const Shop = () => {
+    const [searchQuery, setSearchQuery] = useState('')
+
     return (
         <>
             <div>
@@ -12,12 +14,13 @@ const Shop = () => {
                         type="text"
                         placeholder="Search movie..."
                         className="search-bar"
+                        value={searchQuery}
+                        onChange={(event) => setSearchQuery(event.target.value)}
                     ></input>
                     <h1>Browse our Titles!</h1>
                     <p>search through many popular movies!</p>
                 </div>
-                {/* do we want a search bar here or filter? */}
-                <Movies />
+                <Movies searchQuery={searchQuery} />
             </div>
             <footer>
                 <Footer />
