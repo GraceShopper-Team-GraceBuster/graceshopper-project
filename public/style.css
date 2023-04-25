@@ -63,6 +63,12 @@ td i:hover {
     animation-iteration-count: infinite;
 }
 
+#empty-cart {
+    text-align: center;
+    margin: 100px;
+    font-family: 'ITC Machine';
+}
+
 /* ----------------------- */
 
 /*    <a> Tag Styling      */
