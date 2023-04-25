@@ -10,16 +10,6 @@ body {
 
 /* ----------------------- */
 
-/*    Footer Styling       */
-
-/* ----------------------- */
-
-footer {
-    margin-top: auto;
-}
-
-/* ----------------------- */
-
 /*    <a> Tag Styling      */
 
 /* ----------------------- */
@@ -87,7 +77,7 @@ nav a {
 /* --------------------- */
 
 .search-bar {
-    width: 13%;
+    width: 19%;
     height: 40px;
     border-radius: 10px;
     position: absolute;
@@ -209,6 +199,7 @@ nav a {
 footer {
     background-color: black;
     color: white;
+    margin-top: auto;
 }
 
 .footer-container {
@@ -229,6 +220,52 @@ footer {
 
 /* --------------------------------- */
 
+/*         Login Container         */
+
+/* --------------------------------- */
+
+.login-container {
+    display: flex;
+    align-items: center;
+    height: 10px;
+}
+
+.actual-login-box {
+    border: black 1px solid;
+    text-align: center;
+    width: 30%;
+    height: 300px;
+    margin-top: 10%;
+    padding: 25px;
+    font-size: 30px;
+    background-color: darkgrey;
+    border-radius: 10px;
+}
+
+.actual-login-box input {
+    width: 300px;
+    height: 25px;
+    margin: 20px;
+}
+
+.login-btn {
+    width: 100px;
+    height: 40px;
+    border: black solid 1px;
+    font-size: 19px;
+    border-radius: 10px;
+    margin: 30px 0 0 0;
+}
+
+.login-btn:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* --------------------------------- */
+
+/*             Grouped               */
 /*         Container styling         */
 
 /* --------------------------------- */
