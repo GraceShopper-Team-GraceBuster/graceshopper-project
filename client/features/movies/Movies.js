@@ -18,7 +18,6 @@ function Movie() {
     if (userId) {
       dispatch(addItemToCart({ userId, movieId: movie.id }));
     } else {
-      console.log(movie);
       addToLocalStorageCart(movie);
     }
   };

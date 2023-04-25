@@ -22,11 +22,28 @@ function Cart() {
 
   useEffect(() => {
     if (userId) {
-      dispatch(fetchCartItems(userId));
-      setCartItems(loggedInCartItems);
+
+      if (JSON.stringify(loggedInCartItems) !== JSON.stringify(cartItems)) {
+        dispatch(fetchCartItems(userId));
+        setCartItems((prevCartItems) => {
+          if (
+            JSON.stringify(loggedInCartItems) !== JSON.stringify(prevCartItems)
+          ) {
+            return loggedInCartItems;
+          }
+          return prevCartItems;
+        });
+      }
     } else {
       const localStorageCart = getLocalStorageCart();
-      setCartItems(localStorageCart);
+      setCartItems((prevCartItems) => {
+        if (
+          JSON.stringify(localStorageCart) !== JSON.stringify(prevCartItems)
+        ) {
+          return localStorageCart;
+        }
+        return prevCartItems;
+      });
     }
   }, [dispatch, userId, loggedInCartItems]);
 
@@ -51,6 +68,12 @@ function Cart() {
     if (userId) {
       dispatch(
         updateCartItemQuantity({ userId, movieId, quantity: newQuantity })
+      );
+
+      setCartItems((prevCartItems) =>
+        prevCartItems.map((item) =>
+          item.id === movieId ? { ...item, quantity: newQuantity } : item
+        )
       );
     } else {
       updateLocalStorageCartItemQuantity(movieId, newQuantity);

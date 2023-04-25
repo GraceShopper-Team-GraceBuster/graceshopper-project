@@ -17,7 +17,6 @@ export const addToLocalStorageCart = (movie) => {
     const item = { ...movie, quantity: 1 };
     cart.push(item);
   }
-  console.log(cart);
   setLocalStorageCart(cart);
 };
 
