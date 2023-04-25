@@ -4,11 +4,15 @@ import Footer from '../footer/Footer'
 import Movies from '../movies/Movies'
 
 const Shop = () => {
-
     return (
         <>
             <div>
                 <div className="homepage-title">
+                    <input
+                        type="text"
+                        placeholder="Search movie..."
+                        className="search-bar"
+                    ></input>
                     <h1>Browse our Titles!</h1>
                     <p>search through many popular movies!</p>
                 </div>
