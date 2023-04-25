@@ -92,7 +92,7 @@ function Cart() {
             <div className="cart-container">
                 <h1>Cart</h1>
                 {cartItems.length === 0 ? (
-                    <div>Your cart is empty</div>
+                    <div id='empty-cart'>Your cart is empty</div>
                 ) : (
                     <>
                         <table>
