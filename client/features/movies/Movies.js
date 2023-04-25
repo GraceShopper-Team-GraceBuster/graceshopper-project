@@ -14,12 +14,11 @@ function Movie() {
         dispatch(fetchMovies())
     }, [dispatch])
 
-    const handleAddToCart = (movie) => {
-        if (userId) {
-            dispatch(addItemToCart({ userId, movieId: movie.id }))
-        } else {
-            addToLocalStorageCart(movie)
-        }
+  const handleAddToCart = (movie) => {
+    if (userId) {
+      dispatch(addItemToCart({ userId, movieId: movie.id }));
+    } else {
+      addToLocalStorageCart(movie);
     }
 
     return (
