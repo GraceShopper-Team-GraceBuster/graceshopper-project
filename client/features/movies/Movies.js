@@ -49,6 +49,6 @@ function Movies({ searchQuery }) {
             ))}
         </div>
     )
-}};
+};
 
 export default Movies
