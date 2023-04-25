@@ -8,6 +8,61 @@ body {
     );
 }
 
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto 300px;
+    padding: 10px;
+}
+
+tfoot {
+    padding: 20px;
+}
+
+td {
+    border: solid 1px black;
+}
+
+.cart-movie-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-image {
+    height: 180px;
+    margin-right: auto;
+}
+
+.cart-movie-title {
+    margin-right: 46%;
+    font-weight: bold;
+}
+
+.cart-quanity {
+    width: 50px;
+    height: 30px;
+    font-size: 25px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.cart-container h1 {
+    text-align: center;
+}
+
+td button {
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+td i:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
 /* ----------------------- */
 
 /*    <a> Tag Styling      */
@@ -295,11 +350,17 @@ footer {
 
 .about-title,
 .home-shop,
-.homepage-title {
+.homepage-title,
+.cart-container h1 {
     font-family: 'ITC Machine';
     letter-spacing: 3px;
     text-align: center;
     font-size: 29px;
+}
+
+.cart-container h1 {
+    text-align: center;
+    font-size: 49px;
 }
 
 @font-face {
@@ -319,5 +380,41 @@ footer {
     }
     to {
         transform: rotate(359deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
     }
 }
