@@ -47,6 +47,6 @@ function Movie() {
             </div>
         </>
     )
-}
+}};
 
 export default Movie
