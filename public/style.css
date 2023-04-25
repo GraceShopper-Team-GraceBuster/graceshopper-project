@@ -82,6 +82,22 @@ nav a {
 
 /* --------------------- */
 
+/*       Search Bar      */
+
+/* --------------------- */
+
+.search-bar {
+    width: 13%;
+    height: 40px;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    font-size: 19px;
+    margin: 0 15px 0 0;
+}
+
+/* --------------------- */
+
 /*         Movies        */
 
 /* --------------------- */
@@ -102,16 +118,12 @@ nav a {
     background-color: #fff;
     border-radius: 10px;
     transition: transform 0.3s;
+    border: black 1px solid;
 }
 
 .movie-images {
     width: 250px;
-    height: 400px;
-}
-
-.movies:hover {
-    transform: scale(1.09);
-    box-shadow: 1px 1px 7px black;
+    height: 325px;
 }
 
 .movies h2 {
@@ -121,6 +133,34 @@ nav a {
 
 .movies h3 {
     margin: 2px;
+    font-style: italic;
+}
+
+.movies-btn {
+    font-size: 20px;
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+    background-color: rgba(212, 179, 35, 1);
+    border: none;
+    color: white;
+}
+
+.movies-btn:hover {
+    width: 160px;
+    height: 60px;
+    font-size: 23px;
+    padding: 10px;
+    border: black solid 1px;
+    color: black;
+    background-color: rgb(240, 203, 40);
+}
+
+.movies:hover {
+    transform: scale(1.09);
+    box-shadow: 1px 1px 7px black;
 }
 
 /* ----------------------- */
@@ -131,6 +171,17 @@ nav a {
 
 .homepage-title {
     margin: 100px;
+}
+
+/* ----------------------- */
+
+/*       Shop Title        */
+
+/* ----------------------- */
+
+.homepage-shop {
+    text-decoration: underline;
+    margin: 120px 0;
 }
 
 /* ----------------------- */
