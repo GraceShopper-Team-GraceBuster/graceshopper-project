@@ -7,6 +7,7 @@ const CartItems = db.define("CartItems", {
   quantity: {
     type: Sequelize.INTEGER,
   },
+  // o: you don't need to create this yourself, this is handled by Sequelize
   MovieId: {
     type: Sequelize.INTEGER,
     allowNull: false,

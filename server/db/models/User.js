@@ -16,6 +16,7 @@ const User = db.define("user", {
     type: Sequelize.STRING,
   },
 
+  // o: just remove it if its not being used
   // email: {
   //   type: Sequelize.STRING,
   //   allowNull: false,

@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../db");
 
 const Movies = db.define('Movies', {
+    // o: why are these field capitalized?
     Title: {
         type: Sequelize.TEXT,
         allowNull: false,

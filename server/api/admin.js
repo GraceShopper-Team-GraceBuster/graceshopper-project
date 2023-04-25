@@ -3,6 +3,9 @@ const {
   models: { User, Cart, Product },
 } = require('../db');
 
+// o: if you plan on using this in more than one place, you should
+//  extract this into its own module
+
 // Middleware to restrict access to admin users only
 function adminOnly(req, res, next) {
   if (req.user.isAdmin) {

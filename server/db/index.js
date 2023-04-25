@@ -8,9 +8,17 @@ const Cart = require("./models/Cart");
 const CartItems = require("./models/CartItems");
 
 //associations could go here!
+
+// o: you are miunderstanding how this is supposed to be setup
+
+// o: should be has many
 User.hasOne(Cart);
 Cart.belongsTo(User);
+
+// o: remove this
 CartItems.belongsTo(Movies);
+
+// o: this is correct
 Cart.belongsToMany(Movies, { through: CartItems });
 Movies.belongsToMany(Cart, { through: CartItems });
 

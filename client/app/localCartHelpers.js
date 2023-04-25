@@ -22,6 +22,7 @@ export const addToLocalStorageCart = (movie) => {
 
 export const updateLocalStorageCartItemQuantity = (movieId, quantity) => {
   const cart = getLocalStorageCart();
+
   const index = cart.findIndex((item) => item.id === movieId);
 
   if (index !== -1) {

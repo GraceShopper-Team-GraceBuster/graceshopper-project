@@ -1,8 +1,12 @@
+// o: this is called cartroutes... why not carts... or maybe orders?
 const router = require("express").Router();
 const Cart = require("../db/models/Cart");
 const CartItems = require("../db/models/CartItems");
 const Movies = require("../db/models/Movies");
 
+// o: right now anyone can see anyone's cart... maybe make a route
+
+//  where only the logged in user can retrieve their own cart (without passing an id)
 router.get("/:cartId", async (req, res, next) => {
   try {
     const cartId = req.params.cartId;
@@ -16,11 +20,14 @@ router.get("/:cartId", async (req, res, next) => {
   }
 });
 
+// o: you don't need to send a :userId since you can get it from a logged in user
+// o: why name this add if its already a post
 router.post("/:userId/add", async (req, res, next) => {
   try {
     const userId = req.params.userId;
     const movieId = req.body.movieId;
 
+    // o: you can use findOrCreate here
     let userCart = await Cart.findOne({ where: { userId } });
     if (!userCart) {
       userCart = await Cart.create({ userId });
@@ -41,6 +48,12 @@ router.post("/:userId/add", async (req, res, next) => {
     next(error);
   }
 });
+
+// o: you don't need to send a :userId since you can get it from a logged in user
+// o: you should be sending the movieId via the url
+// o: why name this update if its already a put
+
+// o: example route format: /cart/movies/:movieId
 
 // Update the quantity of a movie in the user's cart
 router.put("/:userId/update", async (req, res, next) => {
@@ -65,6 +78,12 @@ router.put("/:userId/update", async (req, res, next) => {
     next(err);
   }
 });
+
+// o: you don't need to send a :userId since you can get it from a logged in user
+// o: you should be sending the movieId via the url
+// o: why name this remove if its already a delete
+
+// o: example route format: /cart/movies/:movieId
 
 // Remove a movie from the user's cart
 router.delete("/:userId/remove", async (req, res, next) => {

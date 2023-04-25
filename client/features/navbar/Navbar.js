@@ -18,6 +18,7 @@ const Navbar = () => {
         {isLoggedIn ? (
           <div className="navbar-container">
             <Link to="/home">
+              {/* o: src="/gracebuster-logo.png" */}
               <img src="gracebuster-logo.png" className="logo" />
             </Link>
             <Link to="/shop">
@@ -35,6 +36,7 @@ const Navbar = () => {
         ) : (
           <div className="navbar-container">
             <Link to="/home">
+              {/* o: src="/gracebuster-logo.png" */}
               <img src="gracebuster-logo.png" className="logo" />
             </Link>
             <div className="nav-right">

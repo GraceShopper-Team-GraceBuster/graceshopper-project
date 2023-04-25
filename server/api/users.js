@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { models } = require('../db');
 const { User, Cart, Product } = models;
 
+// o: what is this middleware accomplishing exactly?
+
 // Middleware to authenticate users based on token in request headers
 async function authenticateUser(req, res, next) {
   const authHeader = req.headers.authorization;
@@ -17,6 +19,8 @@ async function authenticateUser(req, res, next) {
   next();
 }
 
+// o: you are duplicating the same code on a different file
+
 // Middleware to restrict access to admin users only
 function adminOnly(req, res, next) {
   if (req.user && req.user.isAdmin) {
@@ -27,6 +31,8 @@ function adminOnly(req, res, next) {
 }
 
 router.use(authenticateUser);
+
+// o: take a look at this to see if you need it
 
 // Get all users (admin only)
 router.get('/', adminOnly, async (req, res, next) => {
