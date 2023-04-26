@@ -126,7 +126,8 @@ nav a {
     font-style: italic;
 }
 
-.movies-btn {
+.movies-btn,
+.single-movie-btn {
     font-size: 20px;
     width: 140px;
     height: 40px;
@@ -138,7 +139,8 @@ nav a {
     color: white;
 }
 
-.movies-btn:hover {
+.movies-btn:hover,
+.single-movie-btn:hover {
     width: 160px;
     height: 60px;
     font-size: 23px;
@@ -356,6 +358,26 @@ td i:hover {
 
 /* --------------------------------- */
 
+/*      Single Movie Container       */
+
+/* --------------------------------- */
+
+.single-movie-container {
+    background-color: white;
+    width: 60%;
+    margin: 50px auto 300px;
+    transition: transform 0.3s;
+    border: black 1px solid;
+    border-radius: 10px;
+}
+
+.single-movie-container:hover {
+    transform: scale(1.01);
+    box-shadow: 1px 1px 7px black;
+}
+
+/* --------------------------------- */
+
 /*             Grouped               */
 /*         Container styling         */
 
@@ -376,7 +398,8 @@ td i:hover {
 }
 
 .login-container,
-.account-container {
+.account-container,
+.single-movie-container {
     min-height: calc(100vh - 172px);
 }
 
@@ -393,7 +416,8 @@ td i:hover {
 .cart-container h1,
 .contact-container,
 .order-placed-container,
-.account-container {
+.account-container,
+.single-movie-container {
     font-family: 'ITC Machine';
     letter-spacing: 3px;
     text-align: center;
