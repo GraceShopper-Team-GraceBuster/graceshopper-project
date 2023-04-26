@@ -8,6 +8,67 @@ body {
     );
 }
 
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto 300px;
+    padding: 10px;
+}
+
+tfoot {
+    padding: 20px;
+}
+
+td {
+    border: solid 1px black;
+}
+
+.cart-movie-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-image {
+    height: 180px;
+    margin-right: auto;
+}
+
+.cart-movie-title {
+    margin-right: 46%;
+    font-weight: bold;
+}
+
+.cart-quanity {
+    width: 50px;
+    height: 30px;
+    font-size: 25px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.cart-container h1 {
+    text-align: center;
+}
+
+td button {
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+td i:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+#empty-cart {
+    text-align: center;
+    margin: 100px;
+    font-family: 'ITC Machine';
+}
+
 /* ----------------------- */
 
 /*    <a> Tag Styling      */
