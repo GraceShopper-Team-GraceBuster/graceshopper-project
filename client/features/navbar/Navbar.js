@@ -24,7 +24,7 @@ const Navbar = () => {
               Shop <i className="fa-solid fa-cassette-tape"></i>
             </Link>
             <Link to="/account">Account</Link>
-            <button type="button" onClick={logoutAndRedirectHome}>
+            <button className="logout-btn"type="button" onClick={logoutAndRedirectHome}>
               Logout
             </button>
             <Link to="/cart">

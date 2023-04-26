@@ -14,7 +14,9 @@ const Home = () => {
             <div>
                 <div className="homepage-title">
                     <h1>Welcome to GraceBuster!</h1>
-                    <h3>Browse our selection of new and classic movies!</h3>
+                    <h3>
+                        Browse our featured selection of new and classic movies!
+                    </h3>
                 </div>
                 <div className="featured-titles">
                     <Featured movieIds={[1, 2, 3]} />
