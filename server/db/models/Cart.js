@@ -9,7 +9,6 @@ const Cart = db.define("Cart", {
   userId: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    unique: true,
   },
 });
 

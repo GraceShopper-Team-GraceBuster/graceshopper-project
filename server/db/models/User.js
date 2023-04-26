@@ -11,22 +11,10 @@ const User = db.define("user", {
     unique: true,
     allowNull: false,
   },
-
   password: {
     type: Sequelize.STRING,
   },
-
-  // email: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  //   validate: {
-  //     notEmpty: true,
-  //     notNull: true,
-  //     isEmail: true,
-  //   },
-  // },
 });
-
 module.exports = User;
 
 /**
