@@ -6,13 +6,13 @@ import Footer from '../footer/Footer';
 const OrderPlaced = () => {
     return (
         <>
-            <div>
+            <div className="order-placed-container">
                 <div id='order-title'>
                     <h1>Order Placed!</h1>
                     <h3>Thank you for shopping with us!</h3>
                 </div>
                 <div>
-                    <p>if you have any questions feel free to <Link to='/contact' id='contact-link'>contact</Link> us!</p>
+                    <p>if you have any questions feel free to <Link to='/contact' id='contact-link'>contact</Link> us below!</p>
                 </div>
             </div>
             <footer>
