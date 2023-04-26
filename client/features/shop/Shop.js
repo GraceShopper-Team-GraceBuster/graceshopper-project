@@ -8,7 +8,7 @@ const Shop = () => {
 
     return (
         <>
-            <div>
+            <div >
                 <div className="homepage-title">
                     <input
                         type="text"
