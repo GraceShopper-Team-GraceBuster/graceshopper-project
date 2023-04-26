@@ -8,67 +8,6 @@ body {
     );
 }
 
-table {
-    border-collapse: collapse;
-    text-align: center;
-    width: 70%;
-    margin: 0 auto 300px;
-    padding: 10px;
-}
-
-tfoot {
-    padding: 20px;
-}
-
-td {
-    border: solid 1px black;
-}
-
-.cart-movie-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cart-image {
-    height: 180px;
-    margin-right: auto;
-}
-
-.cart-movie-title {
-    margin-right: 46%;
-    font-weight: bold;
-}
-
-.cart-quanity {
-    width: 50px;
-    height: 30px;
-    font-size: 25px;
-    padding: 20px;
-    font-weight: bold;
-}
-
-.cart-container h1 {
-    text-align: center;
-}
-
-td button {
-    font-size: 30px;
-    border: none;
-    cursor: pointer;
-}
-
-td i:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
-}
-
-#empty-cart {
-    text-align: center;
-    margin: 100px;
-    font-family: 'ITC Machine';
-}
-
 /* ----------------------- */
 
 /*    <a> Tag Styling      */
@@ -329,13 +268,6 @@ td {
     text-align: center;
 }
 
-.checkout-btn {
-    background-color: red;
-    color: black;
-    padding: 25px;
-    font-weight: bold;
-}
-
 td button {
     font-size: 30px;
     border: none;
@@ -345,6 +277,18 @@ td button {
 td i:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
+}
+
+#empty-cart {
+    text-align: center;
+    margin: 100px;
+    font-family: 'ITC Machine';
+}
+
+.checkout-btn {
+    background-color: red;
+    font-family: 'ITC Machine';
+    padding: 15px;
 }
 
 /* ---------------------- */
@@ -403,6 +347,13 @@ td i:hover {
     cursor: pointer;
 }
 
+.logout-btn {
+    background-color: transparent;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+}
+
 /* --------------------------------- */
 
 /*             Grouped               */
@@ -424,7 +375,8 @@ td i:hover {
     min-height: calc(100vh - 272px);
 }
 
-.login-container {
+.login-container,
+.account-container {
     min-height: calc(100vh - 172px);
 }
 
@@ -440,7 +392,8 @@ td i:hover {
 .homepage-title,
 .cart-container h1,
 .contact-container,
-.order-placed-container {
+.order-placed-container,
+.account-container {
     font-family: 'ITC Machine';
     letter-spacing: 3px;
     text-align: center;
