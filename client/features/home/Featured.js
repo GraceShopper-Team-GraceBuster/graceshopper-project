@@ -39,7 +39,7 @@ const Featured = ({ movieIds }) => {
                     data-aos="flip-right"
                 >
                     <NavLink to={`/movies/${movie.id}`}>
-                        <img src={movie.ImageUrl} />
+                        <img class="movie-images" src={movie.ImageUrl} />
                         <h2>{movie.Title}</h2>
                         <h3>Price: ${movie.Price}</h3>
                     </NavLink>

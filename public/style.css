@@ -109,11 +109,13 @@ nav a {
     border-radius: 10px;
     transition: transform 0.3s;
     border: black 1px solid;
+    box-shadow: 1px 1px 8px black;
 }
 
 .movie-images {
     width: 250px;
     height: 325px;
+    box-shadow: 1px 1px 7px black;
 }
 
 .movies h2 {
@@ -364,15 +366,18 @@ td i:hover {
 
 .single-movie-container {
     background-color: white;
-    width: 60%;
+    width: 59%;
     margin: 50px auto 300px;
-    transition: transform 0.3s;
     border: black 1px solid;
     border-radius: 10px;
+    box-shadow: 1px 1px 7px black;
 }
 
-.single-movie-container:hover {
-    transform: scale(1.01);
+.single-movie-btn {
+    margin: 25px;
+}
+
+.single-movie-image {
     box-shadow: 1px 1px 7px black;
 }
 
@@ -419,9 +424,9 @@ td i:hover {
 .account-container,
 .single-movie-container {
     font-family: 'ITC Machine';
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     text-align: center;
-    font-size: 29px;
+    font-size: 25px;
 }
 
 .cart-container h1 {
