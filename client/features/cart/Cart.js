@@ -163,7 +163,7 @@ function Cart() {
                                     <td>
                                         <strong>${totalPrice}</strong>
                                     </td>
-                                    <td>
+                                    <td className="checkout-btn">
                                         <Link to="/orderplaced">Checkout</Link>
                                     </td>
                                 </tr>
